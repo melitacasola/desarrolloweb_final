@@ -52,6 +52,7 @@ ul {
   .titulo h2 {
     font-family: 'Kalam';
     font-size: 4rem;
+    font-weight: bold;
     letter-spacing: 5px;
     margin-left: 3.5rem;
     justify-content: center;
