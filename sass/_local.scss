@@ -1,0 +1,88 @@
+.padre {  
+    display: grid;
+    margin-left: 25px;
+    width: $max;
+    border: solid 1px $letras;
+    grid-template-columns: repeat(3, 3fr);
+    gap: 10px;
+    grid-template-areas:
+      "hijo . ."
+      "hijo . ."
+      "hijito hijito hijito";
+      overflow: hidden;  
+}
+.hijo {
+    grid-area: hijo;
+    img{
+        height: $max;
+    }
+}
+.aver{
+    grid-area: hijito;
+
+    img{
+        margin: 10px;
+        height: 85%;
+    }
+
+    article{
+        display: inline-block; 
+        
+        ul li {
+            margin-left: 10px;
+            list-style-type: square;
+        }
+    }
+}
+
+.divs {
+    font-size: 21px;
+    padding: $pad;
+
+    img{
+        border-radius: $border;
+        overflow: hidden;
+    }
+}
+
+.carrusel {
+    @extend .card;
+    border: 2px solid $color1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    margin: $marg;
+}
+
+.carousel-item{
+    transition: transform 1s easy, opacity .5s;
+
+    img {
+        border-radius: 20px;
+    }
+}
+@media (max-width: 992px) {
+    .padre{
+        display: block;
+        overflow: hidden;
+    }
+    .hijo{
+        width: 80%;
+    }
+   
+}
+
+
+@media screen and (max-width: 665px){
+    .padre{
+        display: none;
+    }  
+  
+}
+
+@media (min-width:665px){
+    #carrusel{
+        display: none;
+    }
+}

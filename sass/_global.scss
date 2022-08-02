@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'Kalam';
+    src: url('../assets/font/Kalam-Regular.ttf');
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+html{
+    font-size: 62.5%;
+    background-color: $color2;
+}
+body {
+    font-family: 'Biryani';
+    background-color: $color1;
+    color: $letras;
+}
+
+a {
+    text-decoration: none;
+    font-size: 18px;
+}
+p {
+    line-height: 1.5;
+    text-align: justify;
+    font-size: 16px;
+    margin: 20px 15px;
+
+}
+ul {
+    list-style-type: none;
+    margin-left: 15px;
+}
+.container{
+    max-width: 120vw;
+    margin: 0 auto;
+}
+
+.titulo{
+    background-image: url('/assets/img/descarga.jpg');
+    height: 65vh;
+    background-size: cover;
+    background-attachment: fixed;
+    color: $color2;
+    
+    h1{
+        font-family: 'Kalam';
+        font-size: 6rem;
+        letter-spacing: 15px;
+        margin-left: 1.5rem;
+        text-shadow: 0.1em 0.1em 0.2em black;
+    }
+    h2{
+        font-family: 'Kalam';
+        font-size: 4rem;
+        letter-spacing: 5px;
+        margin-left:3.5rem;
+        justify-content: center;
+        text-shadow: 0.1em 0.1em 0.2em black;
+    }
+}
+
+
+@media screen and (max-width: 720px){
+    .titulo{
+        width: 100%;
+        h1{
+            font-size: 4rem;
+        }
+        h2{
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 450px){
+    .titulo{
+        width: $max;
+        h1{
+            font-size: 3rem;
+        }
+    }
+}

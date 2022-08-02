@@ -1,0 +1,189 @@
+@mixin mainImagen(){
+    width: $max;
+    margin-bottom: $marg;
+    border-radius: $border;
+    object-fit: cover;
+    height: 350px;
+}
+
+.card{
+    background-color: $letras;
+    border-radius: $border;
+    color: $color2;
+    padding: 0.5rem;
+    margin: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0,0.5);
+    z-index: 0;
+    transition: transform 0.6s;
+
+    &:hover{
+        transform: translateY(15px);
+        z-index: 0;
+    }
+
+    &__title{
+        margin: $pad;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    img{
+        @include mainImagen();
+        margin-bottom: $marg;
+        z-index: 0;
+    }
+
+    &__description{
+        padding: $pad;
+        margin: $marg;
+
+    }
+    
+    &__link{
+        background-color: $color2;
+        color: white;
+        padding: $pad;
+        border-radius: $border;
+        width: $max;
+        display: inline-block;
+        text-align: center;
+        transition: transform color 0.3s;
+
+        &:active{
+            transform: scale(0.9);
+        }
+        &:hover{
+            color: $sombras;
+        }
+    }
+
+    &__video{
+        @include mainImagen();
+    }
+}
+
+
+.courses {
+    margin-top: 35px;
+    margin-bottom: 35px;
+
+    &__grid{
+        display: grid;
+        grid-template-columns: repeat(3, 5fr);
+        gap: 5px;
+    }
+    &__grid1{
+        @extend .courses__grid;
+        grid-template-columns: repeat(2, 5fr);
+        justify-content: space-around;
+    }
+    &__titulo{
+        font-family: 'Kalam';
+        src: url('../font/Kalam-Bold.ttf');
+        font-size: 2.5rem;
+        height: 3rem;
+        margin-top: 30px;
+        padding-left: 3rem;    
+    }
+}
+
+.cursado{
+    padding: 1rem;
+    font-size: 18px;
+    margin: $marg 10px;
+
+    ul li{
+        margin-left: 30px;
+        list-style-type: square;
+    }
+}
+
+.posicion{
+    position: relative;
+    width: 100px;
+    height: 100px;  
+}
+
+.wsp{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.contenedor{
+    @extend .courses__grid;
+    grid-template-columns: repeat(2, 5fr);
+    justify-content: center;
+    gap: 20px;
+}
+.formulario{
+    @extend .courses;
+    &__form{
+        @extend .card;
+        font-size: 13px;
+        margin-top: 65px;
+        height: 350px;
+        margin-right: 50px;
+        justify-content: center;
+        div{
+            margin-left: $marg;
+            text-align: justify;
+            inline-size: 1.66;
+        }
+    }
+}
+
+.map {
+    @extend .card;
+    padding: $pad;
+    height: $max;
+    &__img{
+        margin-left: 15px; 
+        h2{
+            font-size: 20px;
+        }
+        p {
+            font-size: 18px;
+            margin: 20px 15px;
+        }
+        iframe{
+            @include mainImagen();
+            z-index: 0;
+            border: solid 5px $letras;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0,0.5);
+            transition: transform 0.6s;
+            &:hover{
+                transform: translateY(15px);
+            }
+        }
+    }
+}
+
+// MEDIA QUERIES
+@media (max-width: 992px){
+    .courses__grid {
+        grid-template-columns: repeat(2, 1fr);
+    } 
+    .courses__grid1 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .contenedor{
+        grid-template-columns: 1fr;
+    }
+    .map__img img{
+        width: 90%;
+    }
+
+}
+
+
+@media screen and (max-width: 768px){
+    .courses__grid {
+        grid-template-columns: 1fr;
+    }
+    .courses__grid1{
+        grid-template-columns: 1fr;
+    }  
+}

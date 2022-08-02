@@ -1,0 +1,104 @@
+.header {
+    background-color: $color2;
+    padding: 30px 20px;
+    display: flex;
+    height: 10rem;
+    top: 0;
+    width: $max;
+    position: sticky;
+    z-index: 4;
+    
+    
+    &__menu{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        align-items: center;
+        width: 85vw;
+        transition: transform 0.3s;
+
+        a:active{
+            transform: scale(0.9);
+        }
+    }
+    
+}
+
+
+.menu__nav {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    
+    li{
+        margin: $marg;
+        transition: transform 0.3s;
+
+        &:active{
+            transform: scale(0.9);
+        }
+        a{
+            color: $letras;
+            border-bottom: 2px;
+            font-weight: bold;
+            transition: color 0.3s;
+
+            &:hover{
+                color: $sombras;
+            }
+        }
+    }
+    &-title{
+        font-family: 'Kalam';
+        color: $letras;
+        font-size: 4rem;
+        transition: color 0.3s;
+        font-weight: bold;
+        
+        &:hover{
+            color: $sombras;
+        }
+        &:hover::after{
+            content: 'inicio';
+            margin-left: 8px;
+            color: $sombras;
+            font-size: 2rem;
+        }
+    }
+    &-toggle{
+        color: $letras;
+        background: none;
+        border: none;
+        font-size: 40px;
+        padding: 0 20px;
+        display: none;
+        cursor: pointer;
+    }
+}
+
+
+
+@media screen and (max-width: 720px){
+    .menu__nav {
+        flex-direction: column;
+        align-items: center;
+        margin-right: 20px;
+        background-color: $color2;
+        position: fixed;
+        left: 0;
+        top: 10rem;
+        width: $max;
+        padding: 20px 0;
+        height: calc(100% - 10rem);
+        overflow-y: auto;
+        left: $max;
+        transition: left 0.3s;
+
+        &-toggle{
+            display: block;
+        }
+        &-visible{
+            left: 0;
+        }
+    }
+}
