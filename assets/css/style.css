@@ -37,7 +37,7 @@ ul {
   margin: 0 auto; }
 
 .titulo {
-  background-image: url(../assets/img/descarga.jpg);
+  background-image: url("../assets/img/descarga.jpg");
   height: 65vh;
   background-size: cover;
   background-attachment: fixed;
