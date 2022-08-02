@@ -37,7 +37,7 @@ ul {
   margin: 0 auto; }
 
 .titulo {
-  background-image: url("../assets/img/descarga.jpg");
+  background-image: url("../img/descarga.jpg");
   height: 65vh;
   background-size: cover;
   background-attachment: fixed;
@@ -47,7 +47,8 @@ ul {
     font-size: 6rem;
     letter-spacing: 15px;
     margin-left: 1.5rem;
-    text-shadow: 0.1em 0.1em 0.2em black; }
+    text-shadow: 0.1em 0.1em 0.2em black;
+    font-weight: bolder; }
   .titulo h2 {
     font-family: 'Kalam';
     font-size: 4rem;
